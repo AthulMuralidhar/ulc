@@ -6,9 +6,11 @@ authors = ["Athul Muralidhar <athul.muralidhar@bricr.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-spacy = "^3.0.6"
 ipdb = "^0.13.7"
 spacy-transformers = "^1.0.2"
+requests = "^2.25.1"
+nltk = "^3.6.2"
+beautifulsoup4 = "^4.9.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

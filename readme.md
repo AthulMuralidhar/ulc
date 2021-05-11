@@ -23,3 +23,4 @@
 - **llvm**: <https://llvm.org/docs/tutorial/>
 - **chatbot**: <https://www.digitalocean.com/community/tutorials/how-to-create-an-intelligent-chatbot-in-python-using-the-spacy-nlp-library>
 - **chatbot trainer**: <https://spacy.io/universe/project/video-intro-to-nlp-episode-1>
+- **pytorch transformer**
