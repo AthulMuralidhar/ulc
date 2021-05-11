@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 def scraper(source):
     # get a list of projects to scrap from form the sources
     
-    import ipdb; ipdb.set_trace();
+    # import ipdb; ipdb.set_trace();
 
     PROJECT_URL_LIST = []
     for s in source:
@@ -20,11 +20,23 @@ def scraper(source):
 
         soup = BeautifulSoup(r_get.text, 'html.parser')
 
-        print(soup.find_all("a", "Explore, go to repository, location:explore feed"))
+        # print(soup)
+
+        print(soup.find_all("a", {"data-ga-click":"Explore, go to repository, location:explore feed"}))
         # not working correctly returning a [] now for some reason
         # need to find a class that will get me to the above <a> with that text in  data-ga-click 
         # attribute
+        print(len(soup.find_all("a", {"data-ga-click":"Explore, go to repository, location:explore feed"})))
 
+        """
+        next steps
+        - there are 70 entities in the list above
+            - i do not think that all the 70 <a>'s have valid urls
+        - so make a get again to the url and then pic a random set of numbers
+            - while writing this, i realise that it is maybe much easier to clone
+            the repo locally and then run a dataprocessor to parse through the repo and then
+            just build a dump then use that for the transformer vocabulary
+        """
         break
 
     
