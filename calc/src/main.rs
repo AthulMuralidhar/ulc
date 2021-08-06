@@ -1,4 +1,13 @@
 use cfg_if::cfg_if;
+use calc::Compile;
+
+cfg_if!{
+    if #[cfg(feature = "default")]{
+        use calc::jit as Engine;
+    } else {
+        use calc::Interpreter as Engine;
+    }
+}
 
 fn main(){
     let args: Vec<String> = std::env::args().collect();
