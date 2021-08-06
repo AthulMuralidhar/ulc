@@ -1,10 +1,12 @@
-fn main() {
-    println!("Hello, world!");
+use cfg_if::cfg_if;
+
+fn main(){
+    let args: Vec<String> = std::env::args().collect();
+    if args.len() < 2 {
+        eprintln!("No input file was provided");
+        std::process::exit(-1);
+    }
+    println!(
+        "{:?}", Engine::from_source(&std::fs::read_to_string(&args[1]).unwrap()).unwrap()
+    )
 }
-
-
-/* the main motivation is going to be this book here:
-https://createlang.rs/01_calculator/ast.html
-and the code here
-https://github.com/ehsanmok/create-your-own-lang-with-rust
-*/

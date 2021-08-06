@@ -1,12 +1,6 @@
-../ulc/trainer/reddit-data/*
-
+./**/*.lock
 # Added by cargo
 
-/target
+./**/target
 
 
-# Added by cargo
-#
-# already existing elements were commented out
-
-#/target
